@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #00bfff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            2padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+    <h1 style="text-align: center">Login</h1>
+</head>
+    <body
+        <div>
+            <form>
+        <input type="text" placeholder="Masukan Username" style="width: 100%; padding: 10px; margin: 10px; text-align: center" required /> <br />
+        <input type="password" placeholder="Masukan Password" style="width: 100%; padding: 10px; margin: 10px; text-align: center" required />
+        <button type="submit" style="background-color: green; padding: 10px; margin: 10px; width: 100%">Login</button><br />
+        <p style="text-align: center">Belum punya akun ? <a class="" href="#" style="text-align: center">Daftar akun</a></p>
+            </form>
+        </div>
+    <body>
+</head>
+
+    <div class="login-container hidden" id "welcomeBox">
+        <h2>Selamat Datang</h2>
+        <p id="welcomeUser"></p>
+        <button onclick "logout()">Logout</button>
+    </div>
+    
+    <script>
+        const user = "rendy";
+        const pass = "123";
+
+        if (localStorage.getItem("loginUser")) {
+        showWelcome(localStorage.getItem("loginUser")); 
+        }
+
+        function login() {
+            const uname document.getElementById("username").value.trim( 
+            const pwd document.getElementByar ("password").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+
+            if (luname || pwd) {
+            errorMsg.textContent = "Username dan password wajib diisi."
+            errorMsg.classList. cov ("hidden");
+            }
+        }
+        function logout() { localStorage.removeltern("loginUser");
+        document.getElementById("loginBox").classList.remove("hidden");
+        document.getElementById('welcomeBox").classList.add("hidden");
+        document.getElementById("errorMsg").classList.add("hidden");
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        }
+        
+        function showWelcome(name)
+        { document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("welcomeBox").classList.remove("hidden");
+        document.getElementById("welcomeUser").textContent = "Halo, $(name)';
+        }
+        </script>
+    </body>
+</html>
